@@ -21,5 +21,5 @@ call_user_func(array('error_info','error_param'),$test);
 call_user_func(array('error_info','error_param'),$test2);
 call_user_func(array('error_info','error_param'),$test2,3);
 
-$dblink->close();
+header("Content-type:text/html;charset=utf-8");
 ?>
