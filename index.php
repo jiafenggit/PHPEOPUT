@@ -1,4 +1,5 @@
 <?php
+header("Content-type:text/html;charset=utf-8");
 require_once 'include/error.class.php';
 
 $test['name1']='apple';
@@ -21,5 +22,5 @@ call_user_func(array('error_info','error_param'),$test);
 call_user_func(array('error_info','error_param'),$test2);
 call_user_func(array('error_info','error_param'),$test2,3);
 
-header("Content-type:text/html;charset=utf-8");
+
 ?>
