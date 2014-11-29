@@ -27,10 +27,11 @@ class error_info
 	{
 
 		//echo self::$htmlheader;
-		echo '<h3 style="width:100%;height:60px;background:#44cef6;color:#fff;font-weight:700;line-height:60px;text-indent:1em;padding:0;margin:0;font-size:18px;text-shadow: 0px 1px 1px #999;">当前断点位置：';
+		echo '<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15);margin:20px auto;" width="98%" color=#987cb9 SIZE=5>';
+		echo '<h3 style="width:98%;height:60px;background:#44cef6;color:#fff;font-weight:700;line-height:60px;text-indent:1em;padding:0;margin:0 auto;font-size:18px;text-shadow: 0px 1px 1px #999;">当前断点位置：';
 		echo $line;
 		echo "行</h3>";
-		echo '<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15);margin:25px auto 0;" width="98%" color=#987cb9 SIZE=5>';
+		echo '<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15);margin:20px auto;" width="98%" color=#987cb9 SIZE=5>';
 	}
 	/*输出参数*/
 	static function error_param($param="",$way=null)
@@ -39,6 +40,7 @@ class error_info
 		$color[4]="#00bc12";$color[5]="#bbcdc5";$color[6]="#60281e";
 		$color[7]="#e29c45";$color[8]="#a98175";$color[9]="#cca4e3";
 		$colornum=mt_rand(1,9);
+		echo '<HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15);margin:25px auto 0;" width="98%" color=#ff461f SIZE=5>';
 		echo '<div style="clear:both;width:98%;min-height:60px;background:'.$color[$colornum].';color:#000;font-weight:700;line-height:25px;text-indent:1em;padding: 10px 0;border-radius:8px;margin:20px auto;overflow: hidden !important;_overflow: visible;font-size:18px;text-shadow: 0px 1px 1px #999;"><b><p>当前参数输出：</p></b><p>';
 		$info=$param?$param:self::$params;
 		if($way==null)
@@ -86,31 +88,31 @@ class error_info
 			case 1:	//一维数组
 					$i=0;
 					echo "<p>数组解析输出</p>";
-					echo '<div style="clear:both;line-height:30px;font-size:18px;text-shadow: 0px 1px 1px #999;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">数组键值</div></div>';
+					echo '<div style="clear:both;line-height:30px;font-size:18px;text-shadow: 0px 1px 1px #999;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;">数组键值</div></div>';
 					foreach($info as $key => $value)
 					{
-						echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">'.$value."</div></div>";
+						echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">'.$value."</div></div>";
 						$i++;
 					}
 					break;
 			case 2:	//二维数组
 					$i=0;
 					echo "<p>数组解析输出</p>";
-					echo '<div style="clear:both;line-height:30px;font-size:18px;text-shadow: 0px 1px 1px #999;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">数组键值</div></div>';
+					echo '<div style="clear:both;line-height:30px;font-size:18px;text-shadow: 0px 1px 1px #999;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;">数组键值</div></div>';
 					foreach($info as $key => $value)
 					{
 						if(is_array($value))
 						{
-							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">↓【子数组】</div></div>';
+							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;">↓【子数组】</div></div>';
 							
 							foreach($value as $keys => $values)
 							{
-								echo '<div style="clear:both;line-height:30px;color:#fff;"><div style="float:left;width:100px;height:30px;">【'.$key.'】</div><div style="float:left;width:100px;height:30px;">'.$keys.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">'.$values.'</div></div>';
+								echo '<div style="clear:both;line-height:30px;color:#fff;"><div style="float:left;width:100px;height:30px;">【'.$key.'】</div><div style="float:left;width:100px;height:30px;">'.$keys.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">'.$values.'</div></div>';
 							}
 						}
 						else
 						{
-							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">'.$value.'</div></div>';
+							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">'.$value.'</div></div>';
 						}
 						
 						$i++;
@@ -118,13 +120,11 @@ class error_info
 					break;		
 			case 3:
 					echo "<p>数组原型解析输出（Print_r）</p>";
-					echo "<p>";
-					print_r ($info);
-					echo "</p>";
+					echo '<div style="width:98%;height:auto;padding:0 10px;word-break:break-all;">'.$info.'</div>';
 					break;
 			case 4:
 					echo "<p>字符串解析输出（Echo）</p>";
-					echo "<p>".$info."</p>";
+					echo '<div style="width:98%;height:auto;padding:0 10px;word-break:break-all;">'.$info.'</div>';
 					break;
 			case 5:
 					var_dump($info);
@@ -132,31 +132,31 @@ class error_info
 			case 10://解析json一维数组
 					$i=0;
 					echo "<p>Json解析输出</p>";
-					echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:100px;height:30px;margin:0 0 0 20px;">数组键值</div></div>';
+					echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">数组键值</div></div>';
 					foreach($isjson as $key => $value)
 					{
-						echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">'.$value."</div></div>";
+						echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">'.$key.'</div><div style="float:left;width:80px;height:30px;text-align:center;"> => </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">'.$value."</div></div>";
 						$i++;
 					}
 					break;
 			case 11://解析json二维数组
 					$i=0;
 					echo "<p>Json解析输出</p>";
-					echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">数组键值</div></div>';
+					echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【序号】</div><div style="float:left;width:100px;height:30px;">数组键名</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">数组键值</div></div>';
 					foreach($isjson as $key => $value)
 					{
 						if(is_array($value))
 						{
-							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">[ '.$key.' ]</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">↓【子数组】</div></div>';
+							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">[ '.$key.' ]</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">↓【子数组】</div></div>';
 							
 							foreach($value as $keys => $values)
 							{
-								echo '<div style="clear:both;line-height:30px;color:#fff;"><div style="float:left;width:100px;height:30px;">【'.$key.'】</div><div style="float:left;width:100px;height:30px;">[ '.$keys.' ]</div><div style="float:left;width:80px;height:30px;text-align:center;"> { : } </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">[ '.$values.' ]</div></div>';
+								echo '<div style="clear:both;line-height:30px;color:#fff;"><div style="float:left;width:100px;height:30px;">【'.$key.'】</div><div style="float:left;width:100px;height:30px;">[ '.$keys.' ]</div><div style="float:left;width:80px;height:30px;text-align:center;"> { : } </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">[ '.$values.' ]</div></div>';
 							}
 						}
 						else
 						{
-							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">"'.$key.'"</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:300px;height:30px;margin:0 0 0 20px;">"'.$value.'"</div></div>';
+							echo '<div style="clear:both;line-height:30px;"><div style="float:left;width:100px;height:30px;">【'.$i.'】</div><div style="float:left;width:100px;height:30px;">"'.$key.'"</div><div style="float:left;width:80px;height:30px;text-align:center;"> 〓〉 </div><div style="float:left;width:auto;height:30px;margin:0 0 0 20px;word-break:break-all;">"'.$value.'"</div></div>';
 						}
 						
 						$i++;
